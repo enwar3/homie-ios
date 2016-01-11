@@ -16,6 +16,8 @@
 		1B0C7EA81C4321F400E6F2D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0C7EA61C4321F400E6F2D8 /* LaunchScreen.storyboard */; };
 		1B0C7EB31C4321F400E6F2D8 /* homie_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C7EB21C4321F400E6F2D8 /* homie_iosTests.m */; };
 		1B0C7EBE1C4321F400E6F2D8 /* homie_iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C7EBD1C4321F400E6F2D8 /* homie_iosUITests.m */; };
+		1B0C7ED01C4327A200E6F2D8 /* BeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C7ECF1C4327A200E6F2D8 /* BeaconManager.m */; };
+		2267C3C98A09331AA682E452 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E29EA319294459C865B4DD /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		134994230500856234578595 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1B0C7E921C4321F400E6F2D8 /* homie-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "homie-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0C7E961C4321F400E6F2D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B0C7E981C4321F400E6F2D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +57,10 @@
 		1B0C7EB91C4321F400E6F2D8 /* homie-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "homie-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0C7EBD1C4321F400E6F2D8 /* homie_iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = homie_iosUITests.m; sourceTree = "<group>"; };
 		1B0C7EBF1C4321F400E6F2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B0C7ECE1C4327A200E6F2D8 /* BeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconManager.h; sourceTree = "<group>"; };
+		1B0C7ECF1C4327A200E6F2D8 /* BeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconManager.m; sourceTree = "<group>"; };
+		447DD3F52BD7FA5F0DCF7E49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E6E29EA319294459C865B4DD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2267C3C98A09331AA682E452 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +96,8 @@
 				1B0C7EB11C4321F400E6F2D8 /* homie-iosTests */,
 				1B0C7EBC1C4321F400E6F2D8 /* homie-iosUITests */,
 				1B0C7E931C4321F400E6F2D8 /* Products */,
+				3389419BD07999A45C370C6A /* Pods */,
+				223FC6E647981538CA423959 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +116,8 @@
 			children = (
 				1B0C7E981C4321F400E6F2D8 /* AppDelegate.h */,
 				1B0C7E991C4321F400E6F2D8 /* AppDelegate.m */,
+				1B0C7ECE1C4327A200E6F2D8 /* BeaconManager.h */,
+				1B0C7ECF1C4327A200E6F2D8 /* BeaconManager.m */,
 				1B0C7E9B1C4321F400E6F2D8 /* MasterViewController.h */,
 				1B0C7E9C1C4321F400E6F2D8 /* MasterViewController.m */,
 				1B0C7E9E1C4321F400E6F2D8 /* DetailViewController.h */,
@@ -145,6 +157,23 @@
 			path = "homie-iosUITests";
 			sourceTree = "<group>";
 		};
+		223FC6E647981538CA423959 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6E29EA319294459C865B4DD /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3389419BD07999A45C370C6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				447DD3F52BD7FA5F0DCF7E49 /* Pods.debug.xcconfig */,
+				134994230500856234578595 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B0C7EC21C4321F400E6F2D8 /* Build configuration list for PBXNativeTarget "homie-ios" */;
 			buildPhases = (
+				11A0A6DA6F2EBCE0996949CD /* Check Pods Manifest.lock */,
 				1B0C7E8E1C4321F400E6F2D8 /* Sources */,
 				1B0C7E8F1C4321F400E6F2D8 /* Frameworks */,
 				1B0C7E901C4321F400E6F2D8 /* Resources */,
+				7B3020EBD689B08FE1C5F78D /* Embed Pods Frameworks */,
+				C7AB5F7AC7EBC7CAAA8E83C5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,6 +244,7 @@
 				TargetAttributes = {
 					1B0C7E911C4321F400E6F2D8 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = ZWVRPY96D6;
 					};
 					1B0C7EAD1C4321F400E6F2D8 = {
 						CreatedOnToolsVersion = 7.2;
@@ -270,6 +303,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11A0A6DA6F2EBCE0996949CD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3020EBD689B08FE1C5F78D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7AB5F7AC7EBC7CAAA8E83C5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B0C7E8E1C4321F400E6F2D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -279,6 +360,7 @@
 				1B0C7E9D1C4321F400E6F2D8 /* MasterViewController.m in Sources */,
 				1B0C7E971C4321F400E6F2D8 /* main.m in Sources */,
 				1B0C7EA01C4321F400E6F2D8 /* DetailViewController.m in Sources */,
+				1B0C7ED01C4327A200E6F2D8 /* BeaconManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,23 +499,31 @@
 		};
 		1B0C7EC31C4321F400E6F2D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 447DD3F52BD7FA5F0DCF7E49 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "homie-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dtl.homie-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		1B0C7EC41C4321F400E6F2D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 134994230500856234578595 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "homie-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dtl.homie-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -504,6 +594,7 @@
 				1B0C7EC41C4321F400E6F2D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B0C7EC51C4321F400E6F2D8 /* Build configuration list for PBXNativeTarget "homie-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +603,7 @@
 				1B0C7EC71C4321F400E6F2D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B0C7EC81C4321F400E6F2D8 /* Build configuration list for PBXNativeTarget "homie-iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +612,7 @@
 				1B0C7ECA1C4321F400E6F2D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

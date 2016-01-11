@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "BeaconManager.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
+@property (nonatomic, strong) BeaconManager *beaconManager;
 @end
 
 @implementation AppDelegate
@@ -22,6 +24,9 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
+    
+    self.beaconManager = [[BeaconManager alloc] init];
+    
     return YES;
 }
 
