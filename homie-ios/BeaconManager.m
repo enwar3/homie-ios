@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) CLBeaconRegion *exitRegion;
 @property (nonatomic) BOOL wasNear;
+@property (nonatomic) BOOL didEnter;
 @end
 
 NSString *purpleID = @"purple beacon";
@@ -81,7 +82,7 @@ NSString *blueID = @"blue beacon";
     UILocalNotification *notification = [UILocalNotification new];
     notification.alertBody = body;
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
-    NSLog(body);
+    NSLog(@"%@", body);
 }
 #pragma mark - ESTBeaconManagerDelegate
 
@@ -102,12 +103,16 @@ didStartMonitoringForRegion:(CLBeaconRegion *)region {
 }
 
 - (void)beaconManager:(id)manager didEnterRegion:(CLBeaconRegion *)region {
-    
+    // Prevent double firing since we are listening to two beacons
+    if (self.didEnter) {
+        return;
+    }
     NSString *notification = [NSString stringWithFormat:@"Entered beacon region: %@", [region identifier]];
     [self showLocalNotificationWithBody:notification];
     
     if ([region.identifier isEqualToString:blueID] || [region.identifier isEqualToString:purpleID]) {
         [[ServerManager sharedInstance] serverCallWithAction:@"walkin"];
+        self.didEnter = YES;
         
         // (TODO) enable beginRanging for more fine grained location triggers
 //        [self beginRanging];
@@ -119,6 +124,7 @@ didStartMonitoringForRegion:(CLBeaconRegion *)region {
         didExitRegion:(CLBeaconRegion *)region {
     if ([region.identifier isEqualToString:greenID]) {
         [[ServerManager sharedInstance] serverCallWithAction:@"walkout"];
+        self.didEnter = NO;
     }
 }
 

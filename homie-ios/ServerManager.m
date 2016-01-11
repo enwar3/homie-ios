@@ -26,16 +26,14 @@ const NSString *serverEnpoint = @"http://8121f7f.ngrok.com";
     NSString *username = [[[NSUserDefaults standardUserDefaults] objectForKey:@"HomieUserName"] lowercaseString];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/event/%@/%@", serverEnpoint, username, action]];
     NSLog(@"URL: %@", url);
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [NSURLConnection sendAsynchronousRequest:urlRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error,%@", [error localizedDescription]);
         }
         else {
             NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding]);
         }
-    }];
+    }] resume];;
 }
 
 

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1B0C7E971C4321F400E6F2D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C7E961C4321F400E6F2D8 /* main.m */; };
 		1B0C7E9A1C4321F400E6F2D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C7E991C4321F400E6F2D8 /* AppDelegate.m */; };
-		1B0C7E9D1C4321F400E6F2D8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C7E9C1C4321F400E6F2D8 /* MasterViewController.m */; };
 		1B0C7EA01C4321F400E6F2D8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C7E9F1C4321F400E6F2D8 /* DetailViewController.m */; };
 		1B0C7EA31C4321F400E6F2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0C7EA11C4321F400E6F2D8 /* Main.storyboard */; };
 		1B0C7EA51C4321F400E6F2D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0C7EA41C4321F400E6F2D8 /* Assets.xcassets */; };
@@ -45,8 +44,6 @@
 		1B0C7E961C4321F400E6F2D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B0C7E981C4321F400E6F2D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1B0C7E991C4321F400E6F2D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1B0C7E9B1C4321F400E6F2D8 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		1B0C7E9C1C4321F400E6F2D8 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		1B0C7E9E1C4321F400E6F2D8 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1B0C7E9F1C4321F400E6F2D8 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1B0C7EA21C4321F400E6F2D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,8 +125,6 @@
 				1B0C7ED21C43391700E6F2D8 /* ServerManager.m */,
 				1B0C7ED41C433EDD00E6F2D8 /* MainViewController.h */,
 				1B0C7ED51C433EDD00E6F2D8 /* MainViewController.m */,
-				1B0C7E9B1C4321F400E6F2D8 /* MasterViewController.h */,
-				1B0C7E9C1C4321F400E6F2D8 /* MasterViewController.m */,
 				1B0C7E9E1C4321F400E6F2D8 /* DetailViewController.h */,
 				1B0C7E9F1C4321F400E6F2D8 /* DetailViewController.m */,
 				1B0C7EA11C4321F400E6F2D8 /* Main.storyboard */,
@@ -368,7 +363,6 @@
 			files = (
 				1B0C7ED31C43391700E6F2D8 /* ServerManager.m in Sources */,
 				1B0C7E9A1C4321F400E6F2D8 /* AppDelegate.m in Sources */,
-				1B0C7E9D1C4321F400E6F2D8 /* MasterViewController.m in Sources */,
 				1B0C7E971C4321F400E6F2D8 /* main.m in Sources */,
 				1B0C7ED61C433EDD00E6F2D8 /* MainViewController.m in Sources */,
 				1B0C7EA01C4321F400E6F2D8 /* DetailViewController.m in Sources */,
