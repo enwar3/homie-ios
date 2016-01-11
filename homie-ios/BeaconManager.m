@@ -41,7 +41,7 @@ NSString *blueID = @"blue beacon";
         self.blueBeacon = [[CLBeaconRegion alloc]
                            initWithProximityUUID:[[NSUUID alloc]
                                                   initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"]
-                           major:143 minor:1 identifier:@"blue region"];
+                           major:143 minor:1 identifier:blueID];
         
         self.exitRegion = [[CLBeaconRegion alloc]
                            initWithProximityUUID:[[NSUUID alloc]
@@ -106,7 +106,7 @@ didStartMonitoringForRegion:(CLBeaconRegion *)region {
     NSString *notification = [NSString stringWithFormat:@"Entered beacon region: %@", [region identifier]];
     [self showLocalNotificationWithBody:notification];
     
-    if ([region.identifier isEqualToString:blueID]) {
+    if ([region.identifier isEqualToString:blueID] || [region.identifier isEqualToString:purpleID]) {
         [[ServerManager sharedInstance] serverCallWithAction:@"walkin"];
         
         // (TODO) enable beginRanging for more fine grained location triggers

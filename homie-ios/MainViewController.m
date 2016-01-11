@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "ServerManager.h"
 
 @interface MainViewController () <UITextFieldDelegate>
 
@@ -33,6 +34,16 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     return YES;
+}
+
+
+- (IBAction)walkin:(id)sender {
+    [[ServerManager sharedInstance] serverCallWithAction:@"walkin"];
+}
+
+- (IBAction)walkout:(id)sender {
+    [[ServerManager sharedInstance] serverCallWithAction:@"walkout"];
+    
 }
 
 /*

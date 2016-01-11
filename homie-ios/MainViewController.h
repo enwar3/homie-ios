@@ -12,4 +12,8 @@
 
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
 
+- (IBAction)walkin:(id)sender;
+- (IBAction)walkout:(id)sender;
+
+
 @end
