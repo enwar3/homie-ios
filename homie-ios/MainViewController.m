@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController () <UITextFieldDelegate>
 
 @end
 
@@ -17,11 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.nameField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"HomieUserName"];
+    self.nameField.autocorrectionType = UITextAutocorrectionTypeNo;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [[NSUserDefaults standardUserDefaults] setObject:textField.text forKey:@"HomieUserName"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    return YES;
 }
 
 /*

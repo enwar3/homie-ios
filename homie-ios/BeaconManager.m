@@ -19,6 +19,9 @@
 
 @end
 
+NSString *purpleID = @"purple beacon";
+NSString *greenID = @"green beacon";
+
 @implementation BeaconManager
 
 - (id)init {
@@ -27,11 +30,11 @@
         self.purpleBeacon = [[CLBeaconRegion alloc]
                              initWithProximityUUID:[[NSUUID alloc]
                                                     initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"]
-                             major:143 minor:2 identifier:@"purple region"];
+                             major:143 minor:2 identifier:purpleID];
         self.greenBeacon = [[CLBeaconRegion alloc]
                             initWithProximityUUID:[[NSUUID alloc]
                                                    initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"]
-                            major:143 minor:3 identifier:@"green region"];
+                            major:143 minor:3 identifier:greenID];
         self.blueBeacon = [[CLBeaconRegion alloc]
                            initWithProximityUUID:[[NSUUID alloc]
                                                   initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"]
@@ -44,7 +47,7 @@
         
         [self.beaconManager startMonitoringForRegion:self.purpleBeacon];
         [self.beaconManager startMonitoringForRegion:self.greenBeacon];
-        [self.beaconManager startMonitoringForRegion:self.blueBeacon];
+//        [self.beaconManager startMonitoringForRegion:self.blueBeacon];
         
         [[UIApplication sharedApplication]
          registerUserNotificationSettings:[UIUserNotificationSettings
@@ -81,15 +84,18 @@ didStartMonitoringForRegion:(CLBeaconRegion *)region {
     UILocalNotification *notification = [UILocalNotification new];
     notification.alertBody = [NSString stringWithFormat:@"Entered beacon region: %@", [region identifier]];
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
-    
-    [[ServerManager sharedInstance] didEnterRegion:@"andrew"];
+    if ([region.identifier isEqualToString:purpleID]) {
+        [[ServerManager sharedInstance] serverCallWithAction:@"walkin"];
+    }
     
 }
 
 
 - (void)beaconManager:(id)manager
         didExitRegion:(CLBeaconRegion *)region {
-    
+    if ([region.identifier isEqualToString:greenID]) {
+        [[ServerManager sharedInstance] serverCallWithAction:@"walkout"];
+    }
 }
 
 - (void)beaconManager:(id)manager monitoringDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error {

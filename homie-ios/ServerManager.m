@@ -22,8 +22,9 @@ const NSString *serverEnpoint = @"http://8121f7f.ngrok.com";
     return sharedInstance;
 }
 
-- (void)serverCallWithID:(NSString *)name action:(NSString *)action {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/event/%@/%@", serverEnpoint, name, action]];
+- (void)serverCallWithAction:(NSString *)action {
+    NSString *username = [[[NSUserDefaults standardUserDefaults] objectForKey:@"HomieUserName"] lowercaseString];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/event/%@/%@", serverEnpoint, username, action]];
     NSLog(@"URL: %@", url);
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];

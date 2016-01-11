@@ -11,6 +11,6 @@
 @interface ServerManager : NSObject
 
 + (ServerManager *)sharedInstance;
-- (void)didEnterRegion:(NSString *)name;
+- (void)serverCallWithAction:(NSString *)action;
 
 @end
